@@ -192,7 +192,8 @@
             if (message.indexOf('iliner') > -1){
 
               message = message.replace('iliner', 'Thank you for taking the time to interview me. Please feel free to contact me to learn more about my skills and experience, or visit my ');
-              $('#letter').text(message);
+              message = message.replace(/\n/g, '<br>');
+              $('#letter').html(message);
               $('#letter').append(portfolio);
               $('#letter').append(' to see my work. ');
               var company = prompt("Company:");
@@ -207,7 +208,8 @@
 
               $('#formInput').css('display', 'none');
             }else{
-              $('#letter').text(message);
+              message = message.replace(/\n/g, '<br>');
+              $('#letter').html(message);
               $('#formInput').css('display', 'none');
             }
           }
